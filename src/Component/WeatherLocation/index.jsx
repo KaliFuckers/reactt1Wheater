@@ -61,8 +61,7 @@ class WeatherLocation extends Component {
           temperature: data.list[0].main.temp,
           humidity: data.list[0].main.humidity,
           wind: data.list[0].wind.speed,
-          weatherState:
-            data.list[0].weather[0].description,
+          weatherState: data.list[0].weather[0].description,
           icon: data.list[0].weather[0].icon,
           idIcon: data.list[0].weather[0].id,
           country: data.city.country
@@ -74,8 +73,7 @@ class WeatherLocation extends Component {
       .catch(() => console.log("Location not found"));
   };
 
-  componentWillMount() {
-    console.log('Inside the component')
+  componentDidMount() {
     const { ciudad } = this.props.city;
     const { pais } = this.props.city;
     const key = "8d6f54f9b11d7b45c1889a8866a47227";
@@ -97,7 +95,6 @@ class WeatherLocation extends Component {
   };
 
   render() {
-    console.log('Inside the render')
     const { data, info } = this.state;
     const city = this.props.city.ciudad;
     const { pais } = this.props.city;
@@ -125,21 +122,14 @@ class WeatherLocation extends Component {
               </Grid>
               {data ? (
                 <div>
-                  <Typography
-                    variant="headline"
-                    component="h2"
-                  >
+                  <Typography variant="headline" component="h2">
                     {weatherState}
                   </Typography>
                   <WeatherData data={data} />
                   {info ? (
                     <Typography component="div">
                       <br />
-                      <img
-                        src={coro}
-                        alt="coro"
-                        className={classes.imgClass}
-                      />
+                      <img src={coro} alt="coro" className={classes.imgClass} />
                     </Typography>
                   ) : null}
                   <CardActions>
@@ -147,19 +137,17 @@ class WeatherLocation extends Component {
                       color="secondary"
                       variant="raised"
                       size="small"
-                      onClick={() =>
-                        this.handleLocationClick(city)
-                      }
+                      onClick={() => this.handleLocationClick(city)}
                     >
                       Más sobre {city}
                     </Button>
                   </CardActions>
                 </div>
               ) : (
-                  <div className={classes.cirPro}>
-                    <CircularProgress size={50} />
-                  </div>
-                )}
+                <div className={classes.cirPro}>
+                  <CircularProgress size={50} />
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
