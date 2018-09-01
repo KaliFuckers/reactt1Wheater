@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+.locationTitle{
+    background: rgb(0, 183, 255);
+    background: linear-gradient(rgb(127, 167, 212), rgb(63, 73, 212));
+    border: 1px solid transparent;
+    border-radius: 8px 8px 0px 0px;
+    color: rgb(241, 149, 10);
+    font-family: Roboto;
+}
+
+.title{
+    margin-left: 10%;
+}
+
+.weatherLocationCont{
+    width: 100%;
+    margin: 20px auto;
+    transition: all 0.4s;
+    padding: 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cirPro{
+    display: block;
+    width: 100%;
+    margin: auto;
+}

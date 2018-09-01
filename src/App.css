@@ -1,0 +1,15 @@
+.App{
+	margin-top: 60px;
+	height: calc(100vh - 60px);
+	display: flex;
+}
+
+.detail{
+	background: grey;
+	height: 100%;	
+}
+
+.leftPane{
+	overflow-y: scroll
+}
+
